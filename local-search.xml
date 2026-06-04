@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>NVM 安装与使用教程</title>
+    <link href="/2026/06/04/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
+    <url>/2026/06/04/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="一、前言：为什么需要-NVM？"><a href="#一、前言：为什么需要-NVM？" class="headerlink" title="一、前言：为什么需要 NVM？"></a>一、前言：为什么需要 NVM？</h2><p>我们在进行 Node.js 开发、前端项目开发时，经常会遇到一个核心问题：不同项目适配的 Node.js 版本不同。<br>有的老旧项目需要低版本 Node 运行，而 React、Next.js 等新项目需要高版本 Node支持。如果本地仅安装一个 Node 版本，来回卸载重装非常麻烦，还容易导致环境报错、配置崩盘。<br>NVM（Node Version Manager）是 Node 版本管理工具，核心作用就是 一台电脑共存多个 Node 版本，一键自由切换，版本互不冲突，是前端、Node 开发者的必备工具。</p><h2 id="二、NVM-安装教程（Windows）"><a href="#二、NVM-安装教程（Windows）" class="headerlink" title="二、NVM 安装教程（Windows）"></a>二、NVM 安装教程（Windows）</h2><p>Windows 系统使用 nvm-windows 版本，适配桌面端开发，稳定性最强。<br>前置重要提醒<br>如果电脑已手动安装过原生 Node.js，必须先彻底卸载，否则会造成环境冲突，NVM 切换版本失效。安装 NVM 全程使用默认路径，禁止中文路径，避免乱码报错。<br>安装完成后，打开终端输入以下命令，验证是否安装成功：<br>nvm version<br>正常输出版本号，即为安装成功。</p><h2 id="三、NVM-常用核心命令"><a href="#三、NVM-常用核心命令" class="headerlink" title="三、NVM 常用核心命令"></a>三、NVM 常用核心命令</h2><h3 id="1-查看所有可安装的-Node-版本"><a href="#1-查看所有可安装的-Node-版本" class="headerlink" title="1. 查看所有可安装的 Node 版本"></a>1. 查看所有可安装的 Node 版本</h3><p>nvm list available</p><h3 id="2-安装指定-Node-版本"><a href="#2-安装指定-Node-版本" class="headerlink" title="2. 安装指定 Node 版本"></a>2. 安装指定 Node 版本</h3><p>nvm install 16  适配老旧项目<br>nvm install 20  适配新版前端&#x2F;全栈项目</p><h3 id="3-切换-Node-版本"><a href="#3-切换-Node-版本" class="headerlink" title="3. 切换 Node 版本"></a>3. 切换 Node 版本</h3><p>nvm use 16<br>nvm use 20</p><h3 id="4-查看本地已安装的所有版本"><a href="#4-查看本地已安装的所有版本" class="headerlink" title="4. 查看本地已安装的所有版本"></a>4. 查看本地已安装的所有版本</h3><p>nvm list</p><h3 id="5-设置默认-Node-版本"><a href="#5-设置默认-Node-版本" class="headerlink" title="5. 设置默认 Node 版本"></a>5. 设置默认 Node 版本</h3><p>nvm alias default 20</p><h3 id="6-卸载指定-Node-版本"><a href="#6-卸载指定-Node-版本" class="headerlink" title="6. 卸载指定 Node 版本"></a>6. 卸载指定 Node 版本</h3><p>nvm uninstall 16</p><h2 id="四、校验开发环境"><a href="#四、校验开发环境" class="headerlink" title="四、校验开发环境"></a>四、校验开发环境</h2><p>切换对应 Node 版本后，可通过以下命令校验环境是否正常：<br>node -v<br>npm -v<br>正常输出版本号，说明环境配置完全生效。</p><h2 id="五、日常开发使用场景"><a href="#五、日常开发使用场景" class="headerlink" title="五、日常开发使用场景"></a>五、日常开发使用场景</h2><ol><li>运行老旧后端、前端项目，切换低版本 Node16；</li><li>开发 React、Next.js 新项目，使用高版本 Node20；</li><li>多项目并行开发，无需反复安装、卸载 Node 环境。</li></ol><h2 id="六、常见问题解决"><a href="#六、常见问题解决" class="headerlink" title="六、常见问题解决"></a>六、常见问题解决</h2><ol><li>版本切换不生效：电脑残留原生 Node 环境，彻底卸载后重启电脑重试；</li><li>命令无法识别：NVM 未配置环境变量，重新默认路径安装即可。</li></ol><h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><p>NVM 完美解决了 Node 多版本冲突的开发痛点，简化了本地环境配置流程，大幅提升开发效率，是前端和 Node.js 开发中不可或缺的工具。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Node.js 变量、作用域与运算符（超详细实战教程）</title>
+    <link href="/2026/06/04/node-operator/"/>
+    <url>/2026/06/04/node-operator/</url>
+    
+    <content type="html"><![CDATA[<p>变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。<br>一、Node.js 变量定义与三种声明方式<br>变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、let、const，三者在作用域、变量提升、重复声明、修改规则上有本质区别，开发中优先使用 const，其次 let，禁止使用 var。<br>1.1 var（旧版声明，不推荐）<br>var 是 ES5 及之前的变量声明方式，存在很多设计缺陷，现代 Node.js 开发已完全淘汰。<br>核心特性：</p><ul><li>函数级作用域，无块级作用域</li><li>支持变量提升，声明前可访问（值为 undefined）</li><li>允许重复声明同一变量，无报错，会覆盖旧值</li><li>可重复赋值修改<br>&#x2F;&#x2F; var 重复声明不报错<br>var name &#x3D; “张三”<br>var name &#x3D; “李四”<br>console.log(name) &#x2F;&#x2F; 输出：李四</li></ul><p>&#x2F;&#x2F; 变量提升现象<br>console.log(age) &#x2F;&#x2F; 输出：undefined，不会报错<br>var age &#x3D; 18</p><p>致命缺点：容易造成全局变量污染、变量冲突、逻辑混乱，项目越大 bug 越多。<br>1.2 let（可变变量，推荐使用）<br>let 是 ES6 新增的变量声明方式，专门解决 var 的缺陷，用于声明可以被重新赋值的变量。<br>核心特性：</p><ul><li>块级作用域（{} 内部生效）</li><li>不存在变量提升，暂时性死区，声明前无法访问</li><li>禁止重复声明同一变量，重复声明直接报错</li><li>支持重新赋值修改<br>&#x2F;&#x2F; 1. 块级作用域验证<br>if (true) {<br>let num &#x3D; 100<br>console.log(num) &#x2F;&#x2F; 输出：100（块内可访问）<br>}<br>&#x2F;&#x2F; console.log(num) &#x2F;&#x2F; 报错：num is not defined（块外无法访问）</li></ul><p>&#x2F;&#x2F; 2. 可重复赋值<br>let count &#x3D; 1<br>count &#x3D; 2<br>console.log(count) &#x2F;&#x2F; 输出：2</p><p>&#x2F;&#x2F; 3. 禁止重复声明<br>&#x2F;&#x2F; let count &#x3D; 3 &#x2F;&#x2F; 直接报错：Identifier ‘count’ has already been declared</p><p>1.3 const（常量，默认首选）<br>const 是 ES6 新增的常量声明方式，用于声明一旦赋值、无法修改内存地址的变量，开发中 80% 场景都用 const。<br>核心特性：</p><ul><li>块级作用域，和 let 一致</li><li>无变量提升，暂时性死区</li><li>禁止重复声明</li><li>必须初始化赋值，不能只声明不赋值</li><li>基本数据类型无法修改值，引用数据类型（数组、对象）可修改内部属性<br>&#x2F;&#x2F; 1. 必须初始化<br>&#x2F;&#x2F; const name &#x2F;&#x2F; 报错：Missing initializer in const declaration</li></ul><p>&#x2F;&#x2F; 2. 基本类型不可修改<br>const PI &#x3D; 3.14<br>&#x2F;&#x2F; PI &#x3D; 3.1415 &#x2F;&#x2F; 报错：Assignment to constant variable</p><p>&#x2F;&#x2F; 3. 引用类型可修改内部数据（重点踩坑点）<br>const arr &#x3D; [1, 2, 3]<br>arr.push(4) &#x2F;&#x2F; 允许修改内部元素<br>console.log(arr) &#x2F;&#x2F; 输出：[1,2,3,4]</p><p>&#x2F;&#x2F; arr &#x3D; [5,6] &#x2F;&#x2F; 报错：不允许修改数组内存地址<br>1.4 三种变量声明终极总结<br>声明方式<br>作用域<br>重复声明<br>重复赋值<br>变量提升<br>使用场景<br>var<br>函数级<br>允许<br>允许<br>有<br>废弃，不使用<br>let<br>块级<br>禁止<br>允许<br>无<br>变量需要频繁修改<br>const<br>块级<br>禁止<br>禁止（地址）<br>无<br>固定值、对象、数组（默认首选）<br>二、Node.js 三大作用域（核心重点）<br>作用域决定了变量的可访问范围，是解决变量冲突、全局污染、闭包问题的核心，Node.js 中分为：全局作用域、函数作用域、块级作用域。<br>2.1 全局作用域<br>在所有函数、代码块外部定义的变量，属于全局变量，整个文件任意位置都可访问。<br>Node.js 特性：全局变量会挂载到 globalThis 对象，区别于浏览器的 window。<br>&#x2F;&#x2F; 全局变量<br>const siteName &#x3D; “Ruiuoo的博客”</p><p>function test() {<br>  &#x2F;&#x2F; 函数内部可直接访问全局变量<br>  console.log(siteName)<br>}<br>test() &#x2F;&#x2F; 输出：Ruiuoo的博客</p><p>&#x2F;&#x2F; 挂载到全局对象<br>console.log(globalThis.siteName) &#x2F;&#x2F; 输出：Ruiuoo的博客</p><p>2.2 函数作用域<br>在函数内部定义的变量，仅在当前函数内部可访问，函数执行结束后变量销毁，外部无法访问。<br>function getUser() {<br>  &#x2F;&#x2F; 局部变量（函数作用域）<br>  let username &#x3D; “小明”<br>  console.log(username) &#x2F;&#x2F; 内部可访问<br>}<br>getUser()<br>&#x2F;&#x2F; console.log(username) &#x2F;&#x2F; 报错：外部无法访问函数局部变量</p><p>2.3 块级作用域（ES6 核心）<br>由 {} 包裹的代码块（if、for、while、单独代码块）形成的作用域，let&#x2F;const 生效，var 不生效。<br>&#x2F;&#x2F; 块级作用域生效案例<br>for (let i &#x3D; 0; i &lt; 3; i++) {<br>  console.log(i)<br>}<br>&#x2F;&#x2F; console.log(i) &#x2F;&#x2F; 报错：i 仅在循环块内生效</p><p>&#x2F;&#x2F; var 无块级作用域（踩坑案例）<br>for (var j &#x3D; 0; j &lt; 3; j++) {}<br>console.log(j) &#x2F;&#x2F; 输出：3，泄露到全局</p><p>2.4 作用域链（面试高频）<br>当代码需要读取变量时，会从当前作用域层层向外查找，直到全局作用域，找不到则报错，这个层级关系就是作用域链。<br>let a &#x3D; 10<br>function fn1() {<br>  let b &#x3D; 20<br>  function fn2() {<br>    let c &#x3D; 30<br>    &#x2F;&#x2F; 查找顺序：自身c &#x3D;&gt; 外层b &#x3D;&gt; 全局a<br>    console.log(a, b, c) &#x2F;&#x2F; 10 20 30<br>  }<br>  fn2()<br>}<br>fn1()</p><p>三、Node.js 完整运算符大全（实战全覆盖）<br>运算符用于数据运算、逻辑判断、赋值操作，是编写业务逻辑的基础，下面分类详解所有常用运算符及踩坑点。<br>3.1 算术运算符<br>用于数字加减乘除运算，包含：+、-、*、&#x2F;、%、++、–<br>let a &#x3D; 10<br>let b &#x3D; 3</p><p>console.log(a + b) &#x2F;&#x2F; 13 加法<br>console.log(a - b) &#x2F;&#x2F; 7 减法<br>console.log(a * b) &#x2F;&#x2F; 30 乘法<br>console.log(a &#x2F; b) &#x2F;&#x2F; 3.3333 除法<br>console.log(a % b) &#x2F;&#x2F; 1 取余（取模，常用于判断奇偶）</p><p>&#x2F;&#x2F; 自增自减<br>let num &#x3D; 1<br>num++ &#x2F;&#x2F; 后置自增，先取值后+1<br>++num &#x2F;&#x2F; 前置自增，先+1后取值<br>console.log(num) &#x2F;&#x2F; 3</p><p>踩坑点：数字 + 字符串 &#x3D; 字符串拼接，而非加法<br>console.log(10 + “20”) &#x2F;&#x2F; 输出：1020（拼接）<br>console.log(10 - “20”) &#x2F;&#x2F; 输出：-10（自动转数字运算）</p><p>3.2 赋值运算符<br>用于给变量赋值，包含：&#x3D;、+&#x3D;、-&#x3D;、*&#x3D;、&#x2F;&#x3D;、%&#x3D;<br>let num &#x3D; 10<br>num +&#x3D; 5  &#x2F;&#x2F; 等价于 num &#x3D; num + 5<br>num -&#x3D; 2  &#x2F;&#x2F; 等价于 num &#x3D; num - 2<br>num *&#x3D; 2  &#x2F;&#x2F; 等价于 num &#x3D; num * 2<br>console.log(num) &#x2F;&#x2F; 26</p><p>3.3 比较运算符（返回布尔值）<br>用于比较两个值的大小、相等关系，返回 true&#x2F;false，是条件判断的核心。</p><ul><li>&#x3D;&#x3D;：弱相等，只比较值，自动转换数据类型</li><li>&#x3D;&#x3D;&#x3D;：强相等，同时比较值和数据类型（开发首选）</li><li>!&#x3D;、!&#x3D;&#x3D;：不等、严格不等</li><li><blockquote><p>、&lt;、&gt;&#x3D;、&lt;&#x3D;：大小比较<br>&#x2F;&#x2F; 弱相等（踩坑）<br>console.log(10 &#x3D;&#x3D; “10”) &#x2F;&#x2F; true（自动转类型，只比值）</p></blockquote></li></ul><p>&#x2F;&#x2F; 严格相等（推荐）<br>console.log(10 &#x3D;&#x3D;&#x3D; “10”) &#x2F;&#x2F; false（值相同，类型不同）<br>console.log(10 &#x3D;&#x3D;&#x3D; 10) &#x2F;&#x2F; true</p><p>3.4 逻辑运算符（条件判断核心）<br>用于拼接多个判断条件，包含：&amp;&amp;（与）、||（或）、!（非）<br>let score &#x3D; 80</p><p>&#x2F;&#x2F; &amp;&amp; 与：全部条件为true才为true<br>console.log(score &gt; 60 &amp;&amp; score &lt; 90) &#x2F;&#x2F; true</p><p>&#x2F;&#x2F; || 或：任意一个条件为true就为true<br>console.log(score &lt; 60 || score &gt; 70) &#x2F;&#x2F; true</p><p>&#x2F;&#x2F; ! 非：取反<br>console.log(!(score &gt; 90)) &#x2F;&#x2F; true</p><p>短路特性（高频考点&#x2F;实战用法）：</p><ul><li>a &amp;&amp; b：a 为 false，直接返回 a，不执行 b</li><li>a || b：a 为 true，直接返回 a，不执行 b<br>3.5 三元运算符（简化 if else）<br>唯一的三目运算符，用于简化简单的双分支判断，语法：条件 ? 成立执行 : 不成立执行<br>let score &#x3D; 59<br>let res &#x3D; score &gt;&#x3D; 60 ? “及格” : “不及格”<br>console.log(res) &#x2F;&#x2F; 输出：不及格</li></ul><p>四、开发高频踩坑总结</p><ol><li>变量声明规范：全程放弃 var，固定使用 const 声明常量、let 声明可变变量</li><li>作用域避坑：循环、判断内部变量必须用 let&#x2F;const，防止变量泄露全局</li><li>相等判断：业务判断一律用 &#x3D;&#x3D;&#x3D; 严格相等，避免隐式类型转换 bug</li><li>运算避坑：数字和字符串混合运算注意拼接问题，手动转换类型</li><li>const 特性：const 声明的数组&#x2F;对象可改内部数据，不可直接赋值覆盖<br>五、学习总结</li><li>变量是数据存储的核心，let&#x2F;const 的块级作用域彻底解决了旧版 var 的全局污染问题，是现代 Node.js 开发的标准写法；</li><li>作用域控制变量的访问权限，作用域链是变量查找的底层逻辑，理解后可解决 90% 的变量报错问题；</li><li>各类运算符支撑所有数据运算和逻辑判断，严格相等、短路运算、三元运算是项目开发中最高频的用法；</li><li>掌握以上知识点，可独立编写完整的分支、循环、数据运算逻辑，为后续函数、数组方法、接口开发打下基础。</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Node.js, 前端基础, 后端开发</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Node.js 数据类型与流程控制</title>
+    <link href="/2026/06/04/node-base/"/>
+    <url>/2026/06/04/node-base/</url>
+    
+    <content type="html"><![CDATA[<p>Node.js 基于 JavaScript 语法，拥有一套完整的数据类型体系和流程控制语法，是编写后端逻辑、接口开发的基础，本文总结日常开发最常用的核心知识点。<br>一、Node.js 常用数据类型</p><ol><li>数字类型（Number）<br>包含整数、小数，对应其他语言的 Integer、Float、Double，统一为 Number 类型。<br>&#x2F;&#x2F; 整数<br>let num1 &#x3D; 0<br>let num2 &#x3D; 999</li></ol><p>&#x2F;&#x2F; 小数<br>let num3 &#x3D; 0.1<br>let num4 &#x3D; 0.122222<br>2. 字符串类型（String）<br>用于存储文本内容，对应 Java 字符串、Char 字符，JS&#x2F;Node 中没有单独字符类型，统一用字符串。<br>let str1 &#x3D; “1”<br>let str2 &#x3D; “hello node”<br>let str3 &#x3D; ‘a’<br>3. 布尔类型（Boolean）<br>只有两个值：true &#x2F; false，常用于判断条件、状态开关。<br>let flag &#x3D; true<br>let isOpen &#x3D; false<br>4. 数组类型（Array）<br>存储一组有序数据，支持任意类型元素，是开发中最常用的存储结构。<br>let arr1 &#x3D; [1, 2, 3]<br>let arr2 &#x3D; [“张三”, “李四”]<br>let arr3 &#x3D; [1, “文本”, true]<br>5. 空类型<br>undefined：变量未赋值；null：手动置空，用于清空数据。<br>二、流程控制语句<br>流程控制用于控制代码执行顺序，是逻辑判断、循环遍历的基础。</p><ol><li>if &#x2F; else 条件判断<br>满足条件执行对应代码，适用于区间判断、多条件分支。<br>let score &#x3D; 80</li></ol><p>if (score &gt;&#x3D; 60) {<br>  console.log(“及格”)<br>} else {<br>  console.log(“不及格”)<br>}<br>2. for 循环<br>用于重复执行代码，常用于遍历数组、批量处理数据。<br>&#x2F;&#x2F; 基础for循环<br>for (let i &#x3D; 0; i &lt; 5; i++) {<br>  console.log(“循环次数：”, i)<br>}</p><p>&#x2F;&#x2F; 遍历数组<br>let list &#x3D; [10, 20, 30]<br>for (let i &#x3D; 0; i &lt; list.length; i++) {<br>  console.log(list[i])<br>}<br>3. switch 多分支判断<br>适用于固定值匹配判断，比大量 if else 更简洁。<br>let day &#x3D; 1<br>switch (day) {<br>  case 1:<br>    console.log(“周一”);<br>    break;<br>  case 2:<br>    console.log(“周二”);<br>    break;<br>  default:<br>    console.log(“未知星期”);<br>}<br>4. 常用循环写法<br>forEach、for…in、for…of 常用于数组、对象遍历，是项目开发高频用法。<br>三、总结</p><ol><li>Node.js 数据类型简洁统一，数字不分整数小数，日常重点掌握数字、字符串、数组、布尔类型即可满足绝大多数开发场景；</li><li>流程控制是代码逻辑的核心，if 判断、for 循环、switch 分支是所有业务逻辑的基础；</li><li>熟练掌握数据类型和流程控制，才能实现数据处理、接口逻辑、条件筛选等后端功能。</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Node.js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>我的第一篇博客网站嘿嘿嘿</title>
+    <link href="/2026/06/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%98%BF%E5%98%BF%E5%98%BF/"/>
+    <url>/2026/06/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%98%BF%E5%98%BF%E5%98%BF/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2026/06/04/hello-world/"/>
+    <url>/2026/06/04/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>

@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Ruiuoo073">
+  <meta name="keywords" content="前端,编程">
+  
+    <meta name="description" content="变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。一、Node.js 变量定义与三种声明方式变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js 变量、作用域与运算符（超详细实战教程）">
+<meta property="og:url" content="https://ruiuoo073.github.io/2026/06/04/node-operator/index.html">
+<meta property="og:site_name" content="Ruiuoo的博客">
+<meta property="og:description" content="变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。一、Node.js 变量定义与三种声明方式变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、l">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-04T04:30:00.000Z">
+<meta property="article:modified_time" content="2026-06-04T08:38:39.287Z">
+<meta property="article:author" content="Ruiuoo073">
+<meta property="article:tag" content="Node.js, 前端基础, 后端开发">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Node.js 变量、作用域与运算符（超详细实战教程） - Ruiuoo的博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"ruiuoo073.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content (desktop) -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives" target="_self">
+                
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags" target="_self">
+                
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories" target="_self">
+                
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile grid menu overlay -->
+<div id="mobile-grid-menu" class="d-lg-none">
+  <div class="mobile-grid-menu-inner">
+    <div class="container">
+      <div class="row">
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-link-fill"></i>
+                  <span>首页</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/archives" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-link-fill"></i>
+                  <span>归档</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/tags" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-link-fill"></i>
+                  <span>标签</span>
+                </div>
+              </a>
+            </div>
+          
+        
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/categories" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-link-fill"></i>
+                  <span>分类</span>
+                </div>
+              </a>
+            </div>
+          
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
+            <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-search"></i>
+                <span>搜索</span>
+              </div>
+            </a>
+          </div>
+        
+        
+          <div class="col-4 mobile-grid-cell" id="mobile-color-toggle-btn"
+               data-label-light="开灯"
+               data-label-dark="关灯">
+            <a href="javascript:;" aria-label="Color Toggle">
+              <div class="mobile-grid-item">
+                <i class="iconfont icon-dark" id="mobile-color-toggle-icon"></i>
+                <span id="mobile-color-toggle-label">关灯</span>
+              </div>
+            </a>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Node.js 变量、作用域与运算符（超详细实战教程）"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-06-04 12:30" pubdate>
+          2026年6月4日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          42 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Node.js 变量、作用域与运算符（超详细实战教程）</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。<br>一、Node.js 变量定义与三种声明方式<br>变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、let、const，三者在作用域、变量提升、重复声明、修改规则上有本质区别，开发中优先使用 const，其次 let，禁止使用 var。<br>1.1 var（旧版声明，不推荐）<br>var 是 ES5 及之前的变量声明方式，存在很多设计缺陷，现代 Node.js 开发已完全淘汰。<br>核心特性：</p>
+<ul>
+<li>函数级作用域，无块级作用域</li>
+<li>支持变量提升，声明前可访问（值为 undefined）</li>
+<li>允许重复声明同一变量，无报错，会覆盖旧值</li>
+<li>可重复赋值修改<br>&#x2F;&#x2F; var 重复声明不报错<br>var name &#x3D; “张三”<br>var name &#x3D; “李四”<br>console.log(name) &#x2F;&#x2F; 输出：李四</li>
+</ul>
+<p>&#x2F;&#x2F; 变量提升现象<br>console.log(age) &#x2F;&#x2F; 输出：undefined，不会报错<br>var age &#x3D; 18</p>
+<p>致命缺点：容易造成全局变量污染、变量冲突、逻辑混乱，项目越大 bug 越多。<br>1.2 let（可变变量，推荐使用）<br>let 是 ES6 新增的变量声明方式，专门解决 var 的缺陷，用于声明可以被重新赋值的变量。<br>核心特性：</p>
+<ul>
+<li>块级作用域（{} 内部生效）</li>
+<li>不存在变量提升，暂时性死区，声明前无法访问</li>
+<li>禁止重复声明同一变量，重复声明直接报错</li>
+<li>支持重新赋值修改<br>&#x2F;&#x2F; 1. 块级作用域验证<br>if (true) {<br>let num &#x3D; 100<br>console.log(num) &#x2F;&#x2F; 输出：100（块内可访问）<br>}<br>&#x2F;&#x2F; console.log(num) &#x2F;&#x2F; 报错：num is not defined（块外无法访问）</li>
+</ul>
+<p>&#x2F;&#x2F; 2. 可重复赋值<br>let count &#x3D; 1<br>count &#x3D; 2<br>console.log(count) &#x2F;&#x2F; 输出：2</p>
+<p>&#x2F;&#x2F; 3. 禁止重复声明<br>&#x2F;&#x2F; let count &#x3D; 3 &#x2F;&#x2F; 直接报错：Identifier ‘count’ has already been declared</p>
+<p>1.3 const（常量，默认首选）<br>const 是 ES6 新增的常量声明方式，用于声明一旦赋值、无法修改内存地址的变量，开发中 80% 场景都用 const。<br>核心特性：</p>
+<ul>
+<li>块级作用域，和 let 一致</li>
+<li>无变量提升，暂时性死区</li>
+<li>禁止重复声明</li>
+<li>必须初始化赋值，不能只声明不赋值</li>
+<li>基本数据类型无法修改值，引用数据类型（数组、对象）可修改内部属性<br>&#x2F;&#x2F; 1. 必须初始化<br>&#x2F;&#x2F; const name &#x2F;&#x2F; 报错：Missing initializer in const declaration</li>
+</ul>
+<p>&#x2F;&#x2F; 2. 基本类型不可修改<br>const PI &#x3D; 3.14<br>&#x2F;&#x2F; PI &#x3D; 3.1415 &#x2F;&#x2F; 报错：Assignment to constant variable</p>
+<p>&#x2F;&#x2F; 3. 引用类型可修改内部数据（重点踩坑点）<br>const arr &#x3D; [1, 2, 3]<br>arr.push(4) &#x2F;&#x2F; 允许修改内部元素<br>console.log(arr) &#x2F;&#x2F; 输出：[1,2,3,4]</p>
+<p>&#x2F;&#x2F; arr &#x3D; [5,6] &#x2F;&#x2F; 报错：不允许修改数组内存地址<br>1.4 三种变量声明终极总结<br>声明方式<br>作用域<br>重复声明<br>重复赋值<br>变量提升<br>使用场景<br>var<br>函数级<br>允许<br>允许<br>有<br>废弃，不使用<br>let<br>块级<br>禁止<br>允许<br>无<br>变量需要频繁修改<br>const<br>块级<br>禁止<br>禁止（地址）<br>无<br>固定值、对象、数组（默认首选）<br>二、Node.js 三大作用域（核心重点）<br>作用域决定了变量的可访问范围，是解决变量冲突、全局污染、闭包问题的核心，Node.js 中分为：全局作用域、函数作用域、块级作用域。<br>2.1 全局作用域<br>在所有函数、代码块外部定义的变量，属于全局变量，整个文件任意位置都可访问。<br>Node.js 特性：全局变量会挂载到 globalThis 对象，区别于浏览器的 window。<br>&#x2F;&#x2F; 全局变量<br>const siteName &#x3D; “Ruiuoo的博客”</p>
+<p>function test() {<br>  &#x2F;&#x2F; 函数内部可直接访问全局变量<br>  console.log(siteName)<br>}<br>test() &#x2F;&#x2F; 输出：Ruiuoo的博客</p>
+<p>&#x2F;&#x2F; 挂载到全局对象<br>console.log(globalThis.siteName) &#x2F;&#x2F; 输出：Ruiuoo的博客</p>
+<p>2.2 函数作用域<br>在函数内部定义的变量，仅在当前函数内部可访问，函数执行结束后变量销毁，外部无法访问。<br>function getUser() {<br>  &#x2F;&#x2F; 局部变量（函数作用域）<br>  let username &#x3D; “小明”<br>  console.log(username) &#x2F;&#x2F; 内部可访问<br>}<br>getUser()<br>&#x2F;&#x2F; console.log(username) &#x2F;&#x2F; 报错：外部无法访问函数局部变量</p>
+<p>2.3 块级作用域（ES6 核心）<br>由 {} 包裹的代码块（if、for、while、单独代码块）形成的作用域，let&#x2F;const 生效，var 不生效。<br>&#x2F;&#x2F; 块级作用域生效案例<br>for (let i &#x3D; 0; i &lt; 3; i++) {<br>  console.log(i)<br>}<br>&#x2F;&#x2F; console.log(i) &#x2F;&#x2F; 报错：i 仅在循环块内生效</p>
+<p>&#x2F;&#x2F; var 无块级作用域（踩坑案例）<br>for (var j &#x3D; 0; j &lt; 3; j++) {}<br>console.log(j) &#x2F;&#x2F; 输出：3，泄露到全局</p>
+<p>2.4 作用域链（面试高频）<br>当代码需要读取变量时，会从当前作用域层层向外查找，直到全局作用域，找不到则报错，这个层级关系就是作用域链。<br>let a &#x3D; 10<br>function fn1() {<br>  let b &#x3D; 20<br>  function fn2() {<br>    let c &#x3D; 30<br>    &#x2F;&#x2F; 查找顺序：自身c &#x3D;&gt; 外层b &#x3D;&gt; 全局a<br>    console.log(a, b, c) &#x2F;&#x2F; 10 20 30<br>  }<br>  fn2()<br>}<br>fn1()</p>
+<p>三、Node.js 完整运算符大全（实战全覆盖）<br>运算符用于数据运算、逻辑判断、赋值操作，是编写业务逻辑的基础，下面分类详解所有常用运算符及踩坑点。<br>3.1 算术运算符<br>用于数字加减乘除运算，包含：+、-、*、&#x2F;、%、++、–<br>let a &#x3D; 10<br>let b &#x3D; 3</p>
+<p>console.log(a + b) &#x2F;&#x2F; 13 加法<br>console.log(a - b) &#x2F;&#x2F; 7 减法<br>console.log(a * b) &#x2F;&#x2F; 30 乘法<br>console.log(a &#x2F; b) &#x2F;&#x2F; 3.3333 除法<br>console.log(a % b) &#x2F;&#x2F; 1 取余（取模，常用于判断奇偶）</p>
+<p>&#x2F;&#x2F; 自增自减<br>let num &#x3D; 1<br>num++ &#x2F;&#x2F; 后置自增，先取值后+1<br>++num &#x2F;&#x2F; 前置自增，先+1后取值<br>console.log(num) &#x2F;&#x2F; 3</p>
+<p>踩坑点：数字 + 字符串 &#x3D; 字符串拼接，而非加法<br>console.log(10 + “20”) &#x2F;&#x2F; 输出：1020（拼接）<br>console.log(10 - “20”) &#x2F;&#x2F; 输出：-10（自动转数字运算）</p>
+<p>3.2 赋值运算符<br>用于给变量赋值，包含：&#x3D;、+&#x3D;、-&#x3D;、*&#x3D;、&#x2F;&#x3D;、%&#x3D;<br>let num &#x3D; 10<br>num +&#x3D; 5  &#x2F;&#x2F; 等价于 num &#x3D; num + 5<br>num -&#x3D; 2  &#x2F;&#x2F; 等价于 num &#x3D; num - 2<br>num *&#x3D; 2  &#x2F;&#x2F; 等价于 num &#x3D; num * 2<br>console.log(num) &#x2F;&#x2F; 26</p>
+<p>3.3 比较运算符（返回布尔值）<br>用于比较两个值的大小、相等关系，返回 true&#x2F;false，是条件判断的核心。</p>
+<ul>
+<li>&#x3D;&#x3D;：弱相等，只比较值，自动转换数据类型</li>
+<li>&#x3D;&#x3D;&#x3D;：强相等，同时比较值和数据类型（开发首选）</li>
+<li>!&#x3D;、!&#x3D;&#x3D;：不等、严格不等</li>
+<li><blockquote>
+<p>、&lt;、&gt;&#x3D;、&lt;&#x3D;：大小比较<br>&#x2F;&#x2F; 弱相等（踩坑）<br>console.log(10 &#x3D;&#x3D; “10”) &#x2F;&#x2F; true（自动转类型，只比值）</p>
+</blockquote>
+</li>
+</ul>
+<p>&#x2F;&#x2F; 严格相等（推荐）<br>console.log(10 &#x3D;&#x3D;&#x3D; “10”) &#x2F;&#x2F; false（值相同，类型不同）<br>console.log(10 &#x3D;&#x3D;&#x3D; 10) &#x2F;&#x2F; true</p>
+<p>3.4 逻辑运算符（条件判断核心）<br>用于拼接多个判断条件，包含：&amp;&amp;（与）、||（或）、!（非）<br>let score &#x3D; 80</p>
+<p>&#x2F;&#x2F; &amp;&amp; 与：全部条件为true才为true<br>console.log(score &gt; 60 &amp;&amp; score &lt; 90) &#x2F;&#x2F; true</p>
+<p>&#x2F;&#x2F; || 或：任意一个条件为true就为true<br>console.log(score &lt; 60 || score &gt; 70) &#x2F;&#x2F; true</p>
+<p>&#x2F;&#x2F; ! 非：取反<br>console.log(!(score &gt; 90)) &#x2F;&#x2F; true</p>
+<p>短路特性（高频考点&#x2F;实战用法）：</p>
+<ul>
+<li>a &amp;&amp; b：a 为 false，直接返回 a，不执行 b</li>
+<li>a || b：a 为 true，直接返回 a，不执行 b<br>3.5 三元运算符（简化 if else）<br>唯一的三目运算符，用于简化简单的双分支判断，语法：条件 ? 成立执行 : 不成立执行<br>let score &#x3D; 59<br>let res &#x3D; score &gt;&#x3D; 60 ? “及格” : “不及格”<br>console.log(res) &#x2F;&#x2F; 输出：不及格</li>
+</ul>
+<p>四、开发高频踩坑总结</p>
+<ol>
+<li>变量声明规范：全程放弃 var，固定使用 const 声明常量、let 声明可变变量</li>
+<li>作用域避坑：循环、判断内部变量必须用 let&#x2F;const，防止变量泄露全局</li>
+<li>相等判断：业务判断一律用 &#x3D;&#x3D;&#x3D; 严格相等，避免隐式类型转换 bug</li>
+<li>运算避坑：数字和字符串混合运算注意拼接问题，手动转换类型</li>
+<li>const 特性：const 声明的数组&#x2F;对象可改内部数据，不可直接赋值覆盖<br>五、学习总结</li>
+<li>变量是数据存储的核心，let&#x2F;const 的块级作用域彻底解决了旧版 var 的全局污染问题，是现代 Node.js 开发的标准写法；</li>
+<li>作用域控制变量的访问权限，作用域链是变量查找的底层逻辑，理解后可解决 90% 的变量报错问题；</li>
+<li>各类运算符支撑所有数据运算和逻辑判断，严格相等、短路运算、三元运算是项目开发中最高频的用法；</li>
+<li>掌握以上知识点，可独立编写完整的分支、循环、数据运算逻辑，为后续函数、数组方法、接口开发打下基础。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Node-js-%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="print-no-link">#Node.js, 前端基础, 后端开发</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Node.js 变量、作用域与运算符（超详细实战教程）</div>
+      <div>https://ruiuoo073.github.io/2026/06/04/node-operator/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ruiuoo073</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年6月4日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2026/06/04/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="NVM 安装与使用教程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">NVM 安装与使用教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/06/04/node-base/" title="Node.js 数据类型与流程控制">
+                        <span class="hidden-mobile">Node.js 数据类型与流程控制</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    function isExpandAllEnabled() {
+      return CONFIG.toc && CONFIG.toc.expand_all === true;
+    }
+    function expandAllToc() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .tocbot-is-collapsed').removeClass('tocbot-is-collapsed');
+    }
+    function updateTocToggle($li, $childList) {
+      var $toggle = $li.children('.toc-toggle');
+      if ($toggle.length === 0) { return; }
+      var collapsed = $childList.hasClass('tocbot-is-collapsed');
+      $toggle
+        .toggleClass('toc-toggle-collapsed', collapsed)
+        .toggleClass('toc-toggle-expanded', !collapsed);
+    }
+    function bindTocToggle() {
+      if (!isExpandAllEnabled()) { return; }
+      jQuery('#toc-body .toc-list-item').each(function() {
+        var $li = jQuery(this);
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) {
+          if ($li.children('.toc-toggle').length === 0) {
+            $li.prepend('<span class="toc-toggle toc-toggle-placeholder" aria-hidden="true">›</span>');
+          }
+          return;
+        }
+
+        if ($li.children('.toc-toggle').length === 0) {
+          $li.prepend('<span class="toc-toggle toc-toggle-expanded" aria-hidden="true">›</span>');
+        }
+        updateTocToggle($li, $childList);
+      });
+      jQuery('#toc-body').off('click.tocToggle').on('click.tocToggle', '.toc-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var $li = jQuery(this).parent('.toc-list-item');
+        var $childList = $li.children('ol');
+        if ($childList.length === 0) { return; }
+        $childList.toggleClass('tocbot-is-collapsed');
+        updateTocToggle($li, $childList);
+      });
+      if (!window.__tocToggleObserver) {
+        window.__tocToggleObserver = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            if (mutation.type !== 'attributes' || mutation.attributeName !== 'class') { return; }
+            var $list = jQuery(mutation.target);
+            var $li = $list.parent('.toc-list-item');
+            if ($li.length === 0) { return; }
+            updateTocToggle($li, $list);
+          });
+        });
+        jQuery('#toc-body ol').each(function() {
+          window.__tocToggleObserver.observe(this, { attributes: true });
+        });
+      }
+    }
+    var tocConfig = Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc);
+    if (isExpandAllEnabled()) {
+      tocConfig.collapseDepth = 6;
+    }
+    window.tocbot.init(tocConfig);
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+    expandAllToc();
+    bindTocToggle();
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+        expandAllToc();
+        bindTocToggle();
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

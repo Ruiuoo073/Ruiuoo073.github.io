@@ -4,13 +4,23 @@
   
   
   <entry>
-    <title></title>
-    <link href="/2026/07/24/fluuter/"/>
-    <url>/2026/07/24/fluuter/</url>
+    <title>Flutter 学习笔记</title>
+    <link href="/flutter/"/>
+    <url>/flutter/</url>
     
     <content type="html"><![CDATA[<p>fluter<br>什么是flutter?<br>由谷歌推出的开源跨平台ui开发框架 采用Dart 语言开发<br>新建fluutter 项目<br>$ flutter create my_first_app<br>环境校验命令<br>flutter doctor<br>运行项目 flutter run<br>热加载:终端打r<br>清空项目缓存 flutter clean<br>安装项目依赖 flutter pub get</p><p>Dart语法<br>变量声明 var变量名&#x3D;值&#x2F;表达式;<br>常量声明</p><ol><li>const属性名&#x3D;值&#x2F;表达式; 编译时确定<br>(不允许表达式中有变量存在,必须为常量或者固定值)<br>2.final  当需要存储一个不变的数据,但是在运行时才确定,需要使用final声明常量</li></ol><p>数据类型:<br>1.String属性名&#x3D;’文本类型’<br>2.int&#x2F;num&#x2F;double</p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>Flutter</tag>
+      
+      <tag>Dart</tag>
+      
+      <tag>移动端开发</tag>
+      
+    </tags>
     
   </entry>
   

@@ -4,6 +4,48 @@
   
   
   <entry>
+    <title>Flutter 学习笔记</title>
+    <link href="/flutter/"/>
+    <url>/flutter/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Flutter-是什么？"><a href="#Flutter-是什么？" class="headerlink" title="Flutter 是什么？"></a>Flutter 是什么？</h2><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h2 id="Dart-基础"><a href="#Dart-基础" class="headerlink" title="Dart 基础"></a>Dart 基础</h2><h2 id="常用组件"><a href="#常用组件" class="headerlink" title="常用组件"></a>常用组件</h2>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Flutter</tag>
+      
+      <tag>移动端开发</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CSS 盒子模型</title>
+    <link href="/2026/06/29/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/"/>
+    <url>/2026/06/29/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/</url>
+    
+    <content type="html"><![CDATA[<h2 id="CSS-盒子模型"><a href="#CSS-盒子模型" class="headerlink" title="CSS 盒子模型"></a>CSS 盒子模型</h2><p>所有html元素都可以看作盒子<br>Margin(外边距)-清理边框外的区域,外边距是透明的.<br>Border(边框)-围绕在内边距和内容外的边框<br>Padding(内边距)-清除内容周围的区域,内边距是他们的.<br>Content(内容)-盒子的内容,显示文本和图像</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>前端基础</tag>
+      
+      <tag>CSS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>React</title>
     <link href="/2026/06/05/React/"/>
     <url>/2026/06/05/React/</url>
@@ -11,6 +53,14 @@
     <content type="html"><![CDATA[<h2 id="一、React是什么"><a href="#一、React是什么" class="headerlink" title="一、React是什么?"></a>一、React是什么?</h2><blockquote><p>React 是一个用来做「网页界面」的 JavaScript 库（工具），由 Facebook 开发。<br>可以理解成:<strong>专门帮我们快速、高效搭建网页 &#x2F; APP 界面的积木工具。</strong><br>react不是框架(Vue,Angular是框架),它是库,更轻,更自由</p></blockquote><h2 id="二、React-解决了什么问题？"><a href="#二、React-解决了什么问题？" class="headerlink" title="二、React 解决了什么问题？"></a>二、React 解决了什么问题？</h2><ol><li>组件化：把页面拆成一个个独立小零件（按钮、卡片、表单），复用、维护超简单</li><li>数据驱动页面：数据变 → 页面自动变，不用手动改页面</li><li>虚拟 DOM：比直接操作网页更快、性能更好</li><li>单向数据流：逻辑清晰，大型项目不乱</li></ol><h2 id="React-使用教程"><a href="#React-使用教程" class="headerlink" title="React 使用教程"></a>React 使用教程</h2><ol><li>环境准备<br>电脑必先装:<a href="https://nodejs.org/zh-cn">Node.js</a><br>在终端查看版本号:</li></ol><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-keyword">node</span> <span class="hljs-title">-v</span><br>npm -v<br></code></pre></td></tr></table></figure><ol start="2"><li>创建第一个 React 项目<br>在想放的项目里的文件夹里,执行:</li></ol><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">npx</span> <span class="hljs-built_in">create-react-app</span> <span class="hljs-string">my-first-react</span><br></code></pre></td></tr></table></figure><p>创建完成,然后进入项目:</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">cd <span class="hljs-keyword">my</span>-<span class="hljs-keyword">first</span>-react<br></code></pre></td></tr></table></figure><p>启动项目:</p><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> start<br></code></pre></td></tr></table></figure><p>然后浏览器自动打开:<br><a href="http://localhost:3000/">http://localhost:3000</a></p><h2 id="四、React的概念"><a href="#四、React的概念" class="headerlink" title="四、React的概念"></a>四、React的概念</h2><ol><li>组件（Component）<br>页面的每一块都是一个组件<br>比如:</li></ol><ul><li>头部 Header</li><li>文章列表 PostList</li><li>按钮 Button</li><li>评论 Comment<br>组件可以<strong>复用、嵌套、独立管理</strong>。<br>例:</li></ul><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ada"><span class="hljs-keyword">function</span> <span class="hljs-title">Hello</span>() &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-type">&lt;h1&gt;你好，我是</span> React 组件！&lt;/h1&gt;<br>&#125;<br></code></pre></td></tr></table></figure><ol start="2"><li>JSX（在 JS 里写 HTML）<br>React 里不用字符串拼 HTML，直接在 JS 里写标签：</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">App</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>我的第一个页面<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>React 超简单<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  )<br>&#125;<br></code></pre></td></tr></table></figure><ol start="3"><li>状态（State）—— 数据驱动页面<br><strong>State &#x3D; 组件里的数据</strong> 数据变，页面自动变！<br>例:点击按钮数字 +1</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">import</span> &#123; useState &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Counter</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 定义数据：count 是数据，setCount 是修改它的方法</span><br>  <span class="hljs-keyword">const</span> [count, setCount] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>)<br><br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>数字：&#123;count&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;()</span> =&gt;</span> setCount(count + 1)&#125;&gt;点我+1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  )<br>&#125;<br></code></pre></td></tr></table></figure><p>不用手动改页面，改数据就行</p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+      <tag>React</tag>
+      
+    </tags>
     
   </entry>
   
@@ -25,6 +75,14 @@
     
     
     
+    <tags>
+      
+      <tag>Cloudflare</tag>
+      
+      <tag>CDN</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -38,18 +96,32 @@
     
     
     
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
   </entry>
   
   
   
   <entry>
-    <title>typescript</title>
+    <title>TypeScript</title>
     <link href="/2026/06/05/typescript/"/>
     <url>/2026/06/05/typescript/</url>
     
     <content type="html"><![CDATA[<h2 id="一、TypeScript-是什么？"><a href="#一、TypeScript-是什么？" class="headerlink" title="一、TypeScript 是什么？"></a>一、TypeScript 是什么？</h2><p><strong>TS &#x3D; 带类型的 JavaScript</strong><br>浏览器不能直接运行 TS，必须<strong>编译</strong>成 JS才能跑。<br>简单理解：</p><ul><li>JavaScript 是无类型的语言（变量随便改类型，容易出错）</li><li>TypeScript 给 JS 加上了类型检查，让代码更严谨、更安全<br>官方定义：TypeScript 是微软开发的开源编程语言，最终会编译成普通 JavaScript 运行在浏览器 &#x2F; Node.js 中。</li></ul><h2 id="二、TypeScript-解决了什么问题？"><a href="#二、TypeScript-解决了什么问题？" class="headerlink" title="二、TypeScript 解决了什么问题？"></a>二、TypeScript 解决了什么问题？</h2><p>JavaScript 最大的痛点：类型不明确，容易写出隐藏 bug。</p><ol><li>避免 “类型错误”</li></ol><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ceylon"><span class="hljs-comment">//js</span><br><span class="hljs-keyword">let</span> age = <span class="hljs-number">18</span><br>age = <span class="hljs-string">&#x27;十八岁&#x27;</span> <span class="hljs-comment">// JS 不报错，但业务逻辑可能崩</span><br></code></pre></td></tr></table></figure><p>TS 会直接报错，从根源避免 bug。<br>2. 代码更易读、易维护<br>看变量 &#x2F; 函数就知道应该传什么、返回什么，不用猜。<br>团队协作、大型项目必备。<br>3. 开发时自动提示（智能补全）<br>VSCode 会根据类型自动提示属性和方法，写代码更快。<br>4. 适合大型项目<br>JS 项目越大越乱，TS 用类型约束让大型项目可控。</p><h2 id="三、TypeScript-如何使用？"><a href="#三、TypeScript-如何使用？" class="headerlink" title="三、TypeScript 如何使用？"></a>三、TypeScript 如何使用？</h2><p><strong>第一步：安装环境</strong><br>确保你装了 Node.js，然后执行：</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> -g typescript<br></code></pre></td></tr></table></figure><p>验证安装成功：</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">tsc -v</span><br></code></pre></td></tr></table></figure><p><strong>第二步：创建第一个 TS 文件</strong><br>新建 [<code>test.ts</code>]</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// 给变量指定类型：number</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">18</span><br><br><span class="hljs-comment">// 给函数指定参数类型 + 返回值类型</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">add</span>(<span class="hljs-params"><span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>, <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span></span>): <span class="hljs-built_in">number</span> &#123;<br>  <span class="hljs-keyword">return</span> a + b<br>&#125;<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">add</span>(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>))<br></code></pre></td></tr></table></figure><p><strong>第三步：编译 TS 为 JS</strong></p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">tsc <span class="hljs-keyword">test</span>.ts<br></code></pre></td></tr></table></figure><p>会生成一个[<code>test.ts</code>]文件，浏览器和 Node 都能运行。<br><strong>第四步：常用类型写法</strong></p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-comment">// 1. 基本类型</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;小明&quot;</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">20</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">isStudent</span>: <span class="hljs-built_in">boolean</span> = <span class="hljs-literal">true</span><br><br><span class="hljs-comment">// 2. 数组</span><br><span class="hljs-keyword">let</span> <span class="hljs-attr">list</span>: <span class="hljs-built_in">number</span>[] = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]<br><br><span class="hljs-comment">// 3. 对象（interface 最常用）</span><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">User</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span><br>  <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span><br>&#125;<br><br><span class="hljs-keyword">let</span> <span class="hljs-attr">user</span>: <span class="hljs-title class_">User</span> = &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;小红&quot;</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">18</span> &#125;<br><br><span class="hljs-comment">// 4. 函数</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params"><span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">void</span> &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;你好&quot;</span> + name)<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>第五步：更高效的开发方式（ts-node）</strong><br>不用每次手动编译，直接运行 TS：</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">npm install -g ts-<span class="hljs-keyword">node</span><br><span class="hljs-title">ts-node</span> test.ts<br></code></pre></td></tr></table></figure><p>typescript学习网站:<a href="https://www.typescriptlang.org/cheatsheets/">https://www.typescriptlang.org/cheatsheets/</a></p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+      <tag>TypeScript</tag>
+      
+    </tags>
     
   </entry>
   
@@ -66,7 +138,28 @@
     
     <tags>
       
-      <tag>git</tag>
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>NVM 使用教程</title>
+    <link href="/2026/06/05/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
+    <url>/2026/06/05/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="一、前言：为什么需要-NVM？"><a href="#一、前言：为什么需要-NVM？" class="headerlink" title="一、前言：为什么需要 NVM？"></a>一、前言：为什么需要 NVM？</h2><p>我们在进行 Node.js 开发、前端项目开发时，经常会遇到一个核心问题：不同项目适配的 Node.js 版本不同。<br>有的老旧项目需要低版本 Node 运行，而 React、Next.js 等新项目需要高版本 Node支持。如果本地仅安装一个 Node 版本，来回卸载重装非常麻烦，还容易导致环境报错、配置崩盘。<br>NVM（Node Version Manager）是 Node 版本管理工具，核心作用就是 一台电脑共存多个 Node 版本，一键自由切换，版本互不冲突，是前端、Node 开发者的必备工具。<br>一句话:NVM&#x3D;Node 版本的<strong>遥控器</strong>, 按一下就能换版本.</p><h3 id="二、NVM-安装教程（Windows）"><a href="#二、NVM-安装教程（Windows）" class="headerlink" title="二、NVM 安装教程（Windows）"></a>二、NVM 安装教程（Windows）</h3><p>1.<strong>卸载已有Node.js</strong>:先去控制面板卸载Node.js,避免冲突.<br>2.<strong>下载安装包</strong>:访问<a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows发布页</a>,下载[<code>nvm-setup.exe</code>].<br>3.<strong>安装</strong>:双击运行，一路 Next。路径建议保持默认或选 [<code>C:\nvm</code>]（不要有中文或空格）.<br><strong>前置重要提醒</strong><br>4.<strong>验证安装</strong>:打开新的命令提示符(cmd),输入:</p><blockquote><blockquote><p>nvm version<br>如果显示版本号（如 [<code>1.1.12</code>]），说明安装成功</p><blockquote><p>如果电脑已有 Node.js，安装 nvm 时会弹窗问是否接管，选“是”即可</p></blockquote></blockquote></blockquote><h3 id="三、NVM-常用核心命令"><a href="#三、NVM-常用核心命令" class="headerlink" title="三、NVM 常用核心命令"></a>三、NVM 常用核心命令</h3><ol><li>查看所有可安装的 Node 版本</li></ol><ul><li>nvm list available</li></ul><ol start="2"><li>安装指定 Node 版本</li></ol><ul><li>nvm install 16  适配老旧项目</li><li>nvm install 20  适配新版前端&#x2F;全栈项目</li></ul><ol start="3"><li>切换 Node 版本</li></ol><ul><li>nvm use 16</li><li>nvm use 20</li></ul><ol start="4"><li>查看本地已安装的所有版本</li></ol><ul><li>nvm list</li></ul><ol start="5"><li>设置默认 Node 版本</li></ol><ul><li>nvm alias default 20</li></ul><ol start="6"><li>卸载指定 Node 版本</li></ol><ul><li>nvm uninstall 16</li></ul><h3 id="四、校验开发环境"><a href="#四、校验开发环境" class="headerlink" title="四、校验开发环境"></a>四、校验开发环境</h3><p>切换对应 Node 版本后，可通过以下命令校验环境是否正常：</p><ul><li>node -v</li><li>npm -v<br>正常输出版本号，说明环境配置完全生效。</li></ul><h3 id="五、日常开发使用场景"><a href="#五、日常开发使用场景" class="headerlink" title="五、日常开发使用场景"></a>五、日常开发使用场景</h3><ol><li>运行老旧后端、前端项目，切换低版本 Node16；</li><li>开发 React、Next.js 新项目，使用高版本 Node20；</li><li>多项目并行开发，无需反复安装、卸载 Node 环境。</li></ol><h3 id="六、常见问题解决"><a href="#六、常见问题解决" class="headerlink" title="六、常见问题解决"></a>六、常见问题解决</h3><ol><li>版本切换不生效：电脑残留原生 Node 环境，彻底卸载后重启电脑重试；</li><li>命令无法识别：NVM 未配置环境变量，重新默认路径安装即可。</li></ol><h3 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h3><p>NVM 完美解决了 Node 多版本冲突的开发痛点，简化了本地环境配置流程，大幅提升开发效率，是前端和 Node.js 开发中不可或缺的工具。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Node.js</tag>
+      
+      <tag>NVM</tag>
       
     </tags>
     
@@ -85,22 +178,15 @@
     
     <tags>
       
-      <tag>Node.js, 后端基础, 函数, 编程核心</tag>
+      <tag>Node.js</tag>
+      
+      <tag>后端基础</tag>
+      
+      <tag>函数</tag>
+      
+      <tag>编程核心</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>NVM 使用教程</title>
-    <link href="/2026/06/04/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/"/>
-    <url>/2026/06/04/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    
-    <content type="html"><![CDATA[<h2 id="一、前言：为什么需要-NVM？"><a href="#一、前言：为什么需要-NVM？" class="headerlink" title="一、前言：为什么需要 NVM？"></a>一、前言：为什么需要 NVM？</h2><p>我们在进行 Node.js 开发、前端项目开发时，经常会遇到一个核心问题：不同项目适配的 Node.js 版本不同。<br>有的老旧项目需要低版本 Node 运行，而 React、Next.js 等新项目需要高版本 Node支持。如果本地仅安装一个 Node 版本，来回卸载重装非常麻烦，还容易导致环境报错、配置崩盘。<br>NVM（Node Version Manager）是 Node 版本管理工具，核心作用就是 一台电脑共存多个 Node 版本，一键自由切换，版本互不冲突，是前端、Node 开发者的必备工具。<br>一句话:NVM&#x3D;Node 版本的<strong>遥控器</strong>, 按一下就能换版本.</p><h3 id="二、NVM-安装教程（Windows）"><a href="#二、NVM-安装教程（Windows）" class="headerlink" title="二、NVM 安装教程（Windows）"></a>二、NVM 安装教程（Windows）</h3><p>1.<strong>卸载已有Node.js</strong>:先去控制面板卸载Node.js,避免冲突.<br>2.<strong>下载安装包</strong>:访问<a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows发布页</a>,下载[<code>nvm-setup.exe</code>].<br>3.<strong>安装</strong>:双击运行，一路 Next。路径建议保持默认或选 [<code>C:\nvm</code>]（不要有中文或空格）.<br><strong>前置重要提醒</strong><br>4.<strong>验证安装</strong>:打开新的命令提示符(cmd),输入:</p><blockquote><blockquote><p>nvm version<br>如果显示版本号（如 [<code>1.1.12</code>]），说明安装成功</p><blockquote><p>如果电脑已有 Node.js，安装 nvm 时会弹窗问是否接管，选“是”即可</p></blockquote></blockquote></blockquote><h3 id="三、NVM-常用核心命令"><a href="#三、NVM-常用核心命令" class="headerlink" title="三、NVM 常用核心命令"></a>三、NVM 常用核心命令</h3><ol><li>查看所有可安装的 Node 版本</li></ol><ul><li>nvm list available</li></ul><ol start="2"><li>安装指定 Node 版本</li></ol><ul><li>nvm install 16  适配老旧项目</li><li>nvm install 20  适配新版前端&#x2F;全栈项目</li></ul><ol start="3"><li>切换 Node 版本</li></ol><ul><li>nvm use 16</li><li>nvm use 20</li></ul><ol start="4"><li>查看本地已安装的所有版本</li></ol><ul><li>nvm list</li></ul><ol start="5"><li>设置默认 Node 版本</li></ol><ul><li>nvm alias default 20</li></ul><ol start="6"><li>卸载指定 Node 版本</li></ol><ul><li>nvm uninstall 16</li></ul><h3 id="四、校验开发环境"><a href="#四、校验开发环境" class="headerlink" title="四、校验开发环境"></a>四、校验开发环境</h3><p>切换对应 Node 版本后，可通过以下命令校验环境是否正常：</p><ul><li>node -v</li><li>npm -v<br>正常输出版本号，说明环境配置完全生效。</li></ul><h3 id="五、日常开发使用场景"><a href="#五、日常开发使用场景" class="headerlink" title="五、日常开发使用场景"></a>五、日常开发使用场景</h3><ol><li>运行老旧后端、前端项目，切换低版本 Node16；</li><li>开发 React、Next.js 新项目，使用高版本 Node20；</li><li>多项目并行开发，无需反复安装、卸载 Node 环境。</li></ol><h3 id="六、常见问题解决"><a href="#六、常见问题解决" class="headerlink" title="六、常见问题解决"></a>六、常见问题解决</h3><ol><li>版本切换不生效：电脑残留原生 Node 环境，彻底卸载后重启电脑重试；</li><li>命令无法识别：NVM 未配置环境变量，重新默认路径安装即可。</li></ol><h3 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h3><p>NVM 完美解决了 Node 多版本冲突的开发痛点，简化了本地环境配置流程，大幅提升开发效率，是前端和 Node.js 开发中不可或缺的工具。</p>]]></content>
-    
-    
     
   </entry>
   
@@ -117,7 +203,13 @@
     
     <tags>
       
-      <tag>Node.js, 后端开发, 数据处理, 基础语法</tag>
+      <tag>Node.js</tag>
+      
+      <tag>后端开发</tag>
+      
+      <tag>数据处理</tag>
+      
+      <tag>基础语法</tag>
       
     </tags>
     
@@ -136,7 +228,30 @@
     
     <tags>
       
-      <tag>Node.js, 前端基础, 后端开发</tag>
+      <tag>Node.js</tag>
+      
+      <tag>后端开发</tag>
+      
+      <tag>前端基础</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Node.js 数据类型与流程控制</title>
+    <link href="/2026/06/04/Node%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/"/>
+    <url>/2026/06/04/Node%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<p>Node.js 基于 JavaScript 语法，拥有一套完整的数据类型体系和流程控制语法，是编写后端逻辑、接口开发的基础，本文总结日常开发最常用的核心知识点。<br>一、Node.js 常用数据类型</p><ol><li>数字类型（Number）<br>包含整数、小数，对应其他语言的 Integer、Float、Double，统一为 Number 类型。<br>&#x2F;&#x2F; 整数<br>let num1 &#x3D; 0<br>let num2 &#x3D; 999</li></ol><p>&#x2F;&#x2F; 小数<br>let num3 &#x3D; 0.1<br>let num4 &#x3D; 0.122222<br>2. 字符串类型（String）<br>用于存储文本内容，对应 Java 字符串、Char 字符，JS&#x2F;Node 中没有单独字符类型，统一用字符串。<br>let str1 &#x3D; “1”<br>let str2 &#x3D; “hello node”<br>let str3 &#x3D; ‘a’<br>3. 布尔类型（Boolean）<br>只有两个值：true &#x2F; false，常用于判断条件、状态开关。<br>let flag &#x3D; true<br>let isOpen &#x3D; false<br>4. 数组类型（Array）<br>存储一组有序数据，支持任意类型元素，是开发中最常用的存储结构。<br>let arr1 &#x3D; [1, 2, 3]<br>let arr2 &#x3D; [“张三”, “李四”]<br>let arr3 &#x3D; [1, “文本”, true]<br>5. 空类型<br>undefined：变量未赋值；null：手动置空，用于清空数据。<br>二、流程控制语句<br>流程控制用于控制代码执行顺序，是逻辑判断、循环遍历的基础。</p><ol><li>if &#x2F; else 条件判断<br>满足条件执行对应代码，适用于区间判断、多条件分支。<br>let score &#x3D; 80</li></ol><p>if (score &gt;&#x3D; 60) {<br>  console.log(“及格”)<br>} else {<br>  console.log(“不及格”)<br>}<br>2. for 循环<br>用于重复执行代码，常用于遍历数组、批量处理数据。<br>&#x2F;&#x2F; 基础for循环<br>for (let i &#x3D; 0; i &lt; 5; i++) {<br>  console.log(“循环次数：”, i)<br>}</p><p>&#x2F;&#x2F; 遍历数组<br>let list &#x3D; [10, 20, 30]<br>for (let i &#x3D; 0; i &lt; list.length; i++) {<br>  console.log(list[i])<br>}<br>3. switch 多分支判断<br>适用于固定值匹配判断，比大量 if else 更简洁。<br>let day &#x3D; 1<br>switch (day) {<br>  case 1:<br>    console.log(“周一”);<br>    break;<br>  case 2:<br>    console.log(“周二”);<br>    break;<br>  default:<br>    console.log(“未知星期”);<br>}<br>4. 常用循环写法<br>forEach、for…in、for…of 常用于数组、对象遍历，是项目开发高频用法。<br>三、总结</p><ol><li>Node.js 数据类型简洁统一，数字不分整数小数，日常重点掌握数字、字符串、数组、布尔类型即可满足绝大多数开发场景；</li><li>流程控制是代码逻辑的核心，if 判断、for 循环、switch 分支是所有业务逻辑的基础；</li><li>熟练掌握数据类型和流程控制，才能实现数据处理、接口逻辑、条件筛选等后端功能。</li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Node.js</tag>
       
     </tags>
     
@@ -156,6 +271,44 @@
     <tags>
       
       <tag>Node.js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>我的第一篇博客网站嘿嘿嘿</title>
+    <link href="/2026/06/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%98%BF%E5%98%BF%E5%98%BF/"/>
+    <url>/2026/06/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%98%BF%E5%98%BF%E5%98%BF/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>博客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2026/06/04/hello-world/"/>
+    <url>/2026/06/04/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
       
     </tags>
     

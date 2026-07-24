@@ -19,23 +19,22 @@
   <meta name="author" content="Ruiuoo073">
   <meta name="keywords" content="前端,编程">
   
-    <meta name="description" content="Flutter 是什么？环境准备Dart 基础常用组件">
+    <meta name="description" content="fluter什么是flutter?由谷歌推出的开源跨平台ui开发框架 采用Dart 语言开发新建fluutter 项目$ flutter create my_first_app环境校验命令flutter doctor运行项目 flutter run热加载:终端打r清空项目缓存 flutter clean安装项目依赖 flutter pub get Dart语法变量声明 var变量名&#x3D;值&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flutter 学习笔记">
-<meta property="og:url" content="https://ruiuoo073.github.io/flutter/index.html">
+<meta property="og:title" content="Ruiuoo的博客">
+<meta property="og:url" content="https://ruiuoo073.github.io/2026/07/24/fluuter/index.html">
 <meta property="og:site_name" content="Ruiuoo的博客">
-<meta property="og:description" content="Flutter 是什么？环境准备Dart 基础常用组件">
+<meta property="og:description" content="fluter什么是flutter?由谷歌推出的开源跨平台ui开发框架 采用Dart 语言开发新建fluutter 项目$ flutter create my_first_app环境校验命令flutter doctor运行项目 flutter run热加载:终端打r清空项目缓存 flutter clean安装项目依赖 flutter pub get Dart语法变量声明 var变量名&#x3D;值&amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-07-24T06:52:31.000Z">
-<meta property="article:modified_time" content="2026-07-24T08:09:57.557Z">
+<meta property="article:published_time" content="2026-07-24T07:42:56.907Z">
+<meta property="article:modified_time" content="2026-07-24T08:28:25.313Z">
 <meta property="article:author" content="Ruiuoo073">
-<meta property="article:tag" content="Flutter">
-<meta property="article:tag" content="移动端开发">
+<meta property="article:tag" content="前端,编程">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Flutter 学习笔记 - Ruiuoo的博客</title>
+  <title>Ruiuoo的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -69,11 +68,15 @@
 
 
 
+  
+<link rel="stylesheet" href="/css/xiaolan.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"ruiuoo073.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"ruiuoo073.github.io","root":"/","version":"1.9.9","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -95,11 +98,11 @@
   <header>
     
 
-<div class="header-inner" style="height: 70vh;">
+<div class="header-inner" style="height: 42vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>小懒笔记</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -156,6 +159,18 @@
               <a class="nav-link" href="/categories" target="_self">
                 
                 <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/write" target="_self">
+                
+                <span>写笔记</span>
               </a>
             </li>
           
@@ -242,6 +257,20 @@
             </div>
           
         
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/write" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-link-fill"></i>
+                  <span>写笔记</span>
+                </div>
+              </a>
+            </div>
+          
+        
         
           <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
             <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -274,11 +303,11 @@
 <div id="banner" class="banner" parallax=true
      style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.45)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Flutter 学习笔记"></span>
+            <span id="subtitle"></span>
           
         </div>
 
@@ -289,7 +318,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2026-07-24 14:52" pubdate>
+        <time datetime="2026-07-24 15:42" pubdate>
           2026年7月24日 下午
         </time>
       </span>
@@ -301,7 +330,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          25 字
+          349 字
         
       </span>
     
@@ -312,7 +341,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -351,12 +380,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Flutter 学习笔记</h1>
+            <h1 id="seo-header"></h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="Flutter-是什么？"><a href="#Flutter-是什么？" class="headerlink" title="Flutter 是什么？"></a>Flutter 是什么？</h2><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h2 id="Dart-基础"><a href="#Dart-基础" class="headerlink" title="Dart 基础"></a>Dart 基础</h2><h2 id="常用组件"><a href="#常用组件" class="headerlink" title="常用组件"></a>常用组件</h2>
+                <p>fluter<br>什么是flutter?<br>由谷歌推出的开源跨平台ui开发框架 采用Dart 语言开发<br>新建fluutter 项目<br>$ flutter create my_first_app<br>环境校验命令<br>flutter doctor<br>运行项目 flutter run<br>热加载:终端打r<br>清空项目缓存 flutter clean<br>安装项目依赖 flutter pub get</p>
+<p>Dart语法<br>变量声明 var变量名&#x3D;值&#x2F;表达式;<br>常量声明</p>
+<ol>
+<li>const属性名&#x3D;值&#x2F;表达式; 编译时确定<br>(不允许表达式中有变量存在,必须为常量或者固定值)<br>2.final  当需要存储一个不变的数据,但是在运行时才确定,需要使用final声明常量</li>
+</ol>
+<p>数据类型:<br>1.String属性名&#x3D;’文本类型’<br>2.int&#x2F;num&#x2F;double</p>
+
                 
               </div>
             
@@ -364,15 +399,6 @@
             <div>
               <div class="post-metas my-3">
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Flutter/" class="print-no-link">#Flutter</a>
-      
-        <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91/" class="print-no-link">#移动端开发</a>
-      
-    </div>
   
 </div>
 
@@ -382,8 +408,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Flutter 学习笔记</div>
-      <div>https://ruiuoo073.github.io/flutter/</div>
+      <div></div>
+      <div>https://ruiuoo073.github.io/2026/07/24/fluuter/</div>
     </div>
     <div class="license-meta">
       
@@ -564,21 +590,6 @@
 <script  src="/js/plugins.js" ></script>
 
 
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
 
 
 
@@ -749,6 +760,10 @@
   <script  src="/js/local-search.js" ></script>
 
 
+
+
+  
+<script src="/js/xiaolan-editor.js"></script>
 
 
 

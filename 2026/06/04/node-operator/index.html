@@ -19,22 +19,24 @@
   <meta name="author" content="Ruiuoo073">
   <meta name="keywords" content="前端,编程">
   
-    <meta name="description" content="变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。一、Node.js 变量定义与三种声明方式变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、l">
+    <meta name="description" content="Node.js 变量、作用域与运算符  变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。  本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。 一、Node.js 变量定义与三种声明方式变量是用于存储数据的容器，Node.j">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node.js 变量、作用域与运算符（超详细实战教程）">
+<meta property="og:title" content="Node.js 变量、作用域与运算符">
 <meta property="og:url" content="https://ruiuoo073.github.io/2026/06/04/node-operator/index.html">
 <meta property="og:site_name" content="Ruiuoo的博客">
-<meta property="og:description" content="变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。一、Node.js 变量定义与三种声明方式变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、l">
+<meta property="og:description" content="Node.js 变量、作用域与运算符  变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。  本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。 一、Node.js 变量定义与三种声明方式变量是用于存储数据的容器，Node.j">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-06-04T04:30:00.000Z">
-<meta property="article:modified_time" content="2026-06-04T08:38:39.287Z">
+<meta property="article:modified_time" content="2026-07-24T07:41:19.528Z">
 <meta property="article:author" content="Ruiuoo073">
-<meta property="article:tag" content="Node.js, 前端基础, 后端开发">
+<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="前端基础">
+<meta property="article:tag" content="后端开发">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Node.js 变量、作用域与运算符（超详细实战教程） - Ruiuoo的博客</title>
+  <title>Node.js 变量、作用域与运算符 - Ruiuoo的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -68,11 +70,15 @@
 
 
 
+  
+<link rel="stylesheet" href="/css/xiaolan.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"ruiuoo073.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"ruiuoo073.github.io","root":"/","version":"1.9.9","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -94,11 +100,11 @@
   <header>
     
 
-<div class="header-inner" style="height: 70vh;">
+<div class="header-inner" style="height: 42vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>小懒笔记</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -155,6 +161,18 @@
               <a class="nav-link" href="/categories" target="_self">
                 
                 <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/write" target="_self">
+                
+                <span>写笔记</span>
               </a>
             </li>
           
@@ -241,6 +259,20 @@
             </div>
           
         
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/write" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-link-fill"></i>
+                  <span>写笔记</span>
+                </div>
+              </a>
+            </div>
+          
+        
         
           <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
             <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -273,11 +305,11 @@
 <div id="banner" class="banner" parallax=true
      style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.45)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Node.js 变量、作用域与运算符（超详细实战教程）"></span>
+            <span id="subtitle">Node.js 变量、作用域与运算符</span>
           
         </div>
 
@@ -350,12 +382,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Node.js 变量、作用域与运算符（超详细实战教程）</h1>
+            <h1 id="seo-header">Node.js 变量、作用域与运算符</h1>
             
             
               <div class="markdown-body">
                 
-                <p>变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。<br>一、Node.js 变量定义与三种声明方式<br>变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、let、const，三者在作用域、变量提升、重复声明、修改规则上有本质区别，开发中优先使用 const，其次 let，禁止使用 var。<br>1.1 var（旧版声明，不推荐）<br>var 是 ES5 及之前的变量声明方式，存在很多设计缺陷，现代 Node.js 开发已完全淘汰。<br>核心特性：</p>
+                <h2 id="Node-js-变量、作用域与运算符"><a href="#Node-js-变量、作用域与运算符" class="headerlink" title="Node.js 变量、作用域与运算符"></a>Node.js 变量、作用域与运算符</h2><p>  变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。<br>  本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。</p>
+<h3 id="一、Node-js-变量定义与三种声明方式"><a href="#一、Node-js-变量定义与三种声明方式" class="headerlink" title="一、Node.js 变量定义与三种声明方式"></a>一、Node.js 变量定义与三种声明方式</h3><p>变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、let、const，三者在作用域、变量提升、重复声明、修改规则上有本质区别，开发中优先使用 const，其次 let，禁止使用 var。<br>1.1 var（旧版声明，不推荐）<br>var 是 ES5 及之前的变量声明方式，存在很多设计缺陷，现代 Node.js 开发已完全淘汰。<br>核心特性：</p>
 <ul>
 <li>函数级作用域，无块级作用域</li>
 <li>支持变量提升，声明前可访问（值为 undefined）</li>
@@ -382,14 +415,15 @@
 </ul>
 <p>&#x2F;&#x2F; 2. 基本类型不可修改<br>const PI &#x3D; 3.14<br>&#x2F;&#x2F; PI &#x3D; 3.1415 &#x2F;&#x2F; 报错：Assignment to constant variable</p>
 <p>&#x2F;&#x2F; 3. 引用类型可修改内部数据（重点踩坑点）<br>const arr &#x3D; [1, 2, 3]<br>arr.push(4) &#x2F;&#x2F; 允许修改内部元素<br>console.log(arr) &#x2F;&#x2F; 输出：[1,2,3,4]</p>
-<p>&#x2F;&#x2F; arr &#x3D; [5,6] &#x2F;&#x2F; 报错：不允许修改数组内存地址<br>1.4 三种变量声明终极总结<br>声明方式<br>作用域<br>重复声明<br>重复赋值<br>变量提升<br>使用场景<br>var<br>函数级<br>允许<br>允许<br>有<br>废弃，不使用<br>let<br>块级<br>禁止<br>允许<br>无<br>变量需要频繁修改<br>const<br>块级<br>禁止<br>禁止（地址）<br>无<br>固定值、对象、数组（默认首选）<br>二、Node.js 三大作用域（核心重点）<br>作用域决定了变量的可访问范围，是解决变量冲突、全局污染、闭包问题的核心，Node.js 中分为：全局作用域、函数作用域、块级作用域。<br>2.1 全局作用域<br>在所有函数、代码块外部定义的变量，属于全局变量，整个文件任意位置都可访问。<br>Node.js 特性：全局变量会挂载到 globalThis 对象，区别于浏览器的 window。<br>&#x2F;&#x2F; 全局变量<br>const siteName &#x3D; “Ruiuoo的博客”</p>
+<p>&#x2F;&#x2F; arr &#x3D; [5,6] &#x2F;&#x2F; 报错：不允许修改数组内存地址<br>1.4 三种变量声明终极总结<br>声明方式<br>作用域<br>重复声明<br>重复赋值<br>变量提升<br>使用场景<br>var<br>函数级<br>允许<br>允许<br>有<br>废弃，不使用<br>let<br>块级<br>禁止<br>允许<br>无<br>变量需要频繁修改<br>const<br>块级<br>禁止<br>禁止（地址）<br>无<br>固定值、对象、数组（默认首选）</p>
+<h3 id="二、Node-js-三大作用域（核心重点）"><a href="#二、Node-js-三大作用域（核心重点）" class="headerlink" title="二、Node.js 三大作用域（核心重点）"></a>二、Node.js 三大作用域（核心重点）</h3><p>作用域决定了变量的可访问范围，是解决变量冲突、全局污染、闭包问题的核心，Node.js 中分为：全局作用域、函数作用域、块级作用域。<br>2.1 全局作用域<br>在所有函数、代码块外部定义的变量，属于全局变量，整个文件任意位置都可访问。<br>Node.js 特性：全局变量会挂载到 globalThis 对象，区别于浏览器的 window。<br>&#x2F;&#x2F; 全局变量<br>const siteName &#x3D; “Ruiuoo的博客”</p>
 <p>function test() {<br>  &#x2F;&#x2F; 函数内部可直接访问全局变量<br>  console.log(siteName)<br>}<br>test() &#x2F;&#x2F; 输出：Ruiuoo的博客</p>
 <p>&#x2F;&#x2F; 挂载到全局对象<br>console.log(globalThis.siteName) &#x2F;&#x2F; 输出：Ruiuoo的博客</p>
 <p>2.2 函数作用域<br>在函数内部定义的变量，仅在当前函数内部可访问，函数执行结束后变量销毁，外部无法访问。<br>function getUser() {<br>  &#x2F;&#x2F; 局部变量（函数作用域）<br>  let username &#x3D; “小明”<br>  console.log(username) &#x2F;&#x2F; 内部可访问<br>}<br>getUser()<br>&#x2F;&#x2F; console.log(username) &#x2F;&#x2F; 报错：外部无法访问函数局部变量</p>
 <p>2.3 块级作用域（ES6 核心）<br>由 {} 包裹的代码块（if、for、while、单独代码块）形成的作用域，let&#x2F;const 生效，var 不生效。<br>&#x2F;&#x2F; 块级作用域生效案例<br>for (let i &#x3D; 0; i &lt; 3; i++) {<br>  console.log(i)<br>}<br>&#x2F;&#x2F; console.log(i) &#x2F;&#x2F; 报错：i 仅在循环块内生效</p>
 <p>&#x2F;&#x2F; var 无块级作用域（踩坑案例）<br>for (var j &#x3D; 0; j &lt; 3; j++) {}<br>console.log(j) &#x2F;&#x2F; 输出：3，泄露到全局</p>
 <p>2.4 作用域链（面试高频）<br>当代码需要读取变量时，会从当前作用域层层向外查找，直到全局作用域，找不到则报错，这个层级关系就是作用域链。<br>let a &#x3D; 10<br>function fn1() {<br>  let b &#x3D; 20<br>  function fn2() {<br>    let c &#x3D; 30<br>    &#x2F;&#x2F; 查找顺序：自身c &#x3D;&gt; 外层b &#x3D;&gt; 全局a<br>    console.log(a, b, c) &#x2F;&#x2F; 10 20 30<br>  }<br>  fn2()<br>}<br>fn1()</p>
-<p>三、Node.js 完整运算符大全（实战全覆盖）<br>运算符用于数据运算、逻辑判断、赋值操作，是编写业务逻辑的基础，下面分类详解所有常用运算符及踩坑点。<br>3.1 算术运算符<br>用于数字加减乘除运算，包含：+、-、*、&#x2F;、%、++、–<br>let a &#x3D; 10<br>let b &#x3D; 3</p>
+<h3 id="三、Node-js-完整运算符大全（实战全覆盖）"><a href="#三、Node-js-完整运算符大全（实战全覆盖）" class="headerlink" title="三、Node.js 完整运算符大全（实战全覆盖）"></a>三、Node.js 完整运算符大全（实战全覆盖）</h3><p>运算符用于数据运算、逻辑判断、赋值操作，是编写业务逻辑的基础，下面分类详解所有常用运算符及踩坑点。<br>3.1 算术运算符<br>用于数字加减乘除运算，包含：+、-、*、&#x2F;、%、++、–<br>let a &#x3D; 10<br>let b &#x3D; 3</p>
 <p>console.log(a + b) &#x2F;&#x2F; 13 加法<br>console.log(a - b) &#x2F;&#x2F; 7 减法<br>console.log(a * b) &#x2F;&#x2F; 30 乘法<br>console.log(a &#x2F; b) &#x2F;&#x2F; 3.3333 除法<br>console.log(a % b) &#x2F;&#x2F; 1 取余（取模，常用于判断奇偶）</p>
 <p>&#x2F;&#x2F; 自增自减<br>let num &#x3D; 1<br>num++ &#x2F;&#x2F; 后置自增，先取值后+1<br>++num &#x2F;&#x2F; 前置自增，先+1后取值<br>console.log(num) &#x2F;&#x2F; 3</p>
 <p>踩坑点：数字 + 字符串 &#x3D; 字符串拼接，而非加法<br>console.log(10 + “20”) &#x2F;&#x2F; 输出：1020（拼接）<br>console.log(10 - “20”) &#x2F;&#x2F; 输出：-10（自动转数字运算）</p>
@@ -414,8 +448,7 @@
 <li>a &amp;&amp; b：a 为 false，直接返回 a，不执行 b</li>
 <li>a || b：a 为 true，直接返回 a，不执行 b<br>3.5 三元运算符（简化 if else）<br>唯一的三目运算符，用于简化简单的双分支判断，语法：条件 ? 成立执行 : 不成立执行<br>let score &#x3D; 59<br>let res &#x3D; score &gt;&#x3D; 60 ? “及格” : “不及格”<br>console.log(res) &#x2F;&#x2F; 输出：不及格</li>
 </ul>
-<p>四、开发高频踩坑总结</p>
-<ol>
+<h3 id="四、开发高频踩坑总结"><a href="#四、开发高频踩坑总结" class="headerlink" title="四、开发高频踩坑总结"></a>四、开发高频踩坑总结</h3><ol>
 <li>变量声明规范：全程放弃 var，固定使用 const 声明常量、let 声明可变变量</li>
 <li>作用域避坑：循环、判断内部变量必须用 let&#x2F;const，防止变量泄露全局</li>
 <li>相等判断：业务判断一律用 &#x3D;&#x3D;&#x3D; 严格相等，避免隐式类型转换 bug</li>
@@ -438,7 +471,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Node-js-%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="print-no-link">#Node.js, 前端基础, 后端开发</a>
+        <a href="/tags/Node-js/" class="print-no-link">#Node.js</a>
+      
+        <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="print-no-link">#后端开发</a>
+      
+        <a href="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" class="print-no-link">#前端基础</a>
       
     </div>
   
@@ -450,7 +487,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Node.js 变量、作用域与运算符（超详细实战教程）</div>
+      <div>Node.js 变量、作用域与运算符</div>
       <div>https://ruiuoo073.github.io/2026/06/04/node-operator/</div>
     </div>
     <div class="license-meta">
@@ -495,9 +532,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2026/06/04/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="NVM 安装与使用教程">
+                      <a href="/2026/06/04/2/" title="Node.js 字符串与数组常用方法">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">NVM 安装与使用教程</span>
+                        <span class="hidden-mobile">Node.js 字符串与数组常用方法</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -637,21 +674,6 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
 
 
 
@@ -823,6 +845,10 @@
   <script  src="/js/local-search.js" ></script>
 
 
+
+
+  
+<script src="/js/xiaolan-editor.js"></script>
 
 
 

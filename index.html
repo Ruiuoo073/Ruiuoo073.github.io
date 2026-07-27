@@ -60,11 +60,15 @@
 
 
 
+  
+<link rel="stylesheet" href="/css/xiaolan.css">
+
+
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"ruiuoo073.github.io","root":"/","version":"1.9.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"ruiuoo073.github.io","root":"/","version":"1.9.9","typing":{"enable":false,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"expand_all":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"openkounter":{"server_url":"https://open-kounter.mintimate.cn","path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -86,11 +90,11 @@
   <header>
     
 
-<div class="header-inner" style="height: 100vh;">
+<div class="header-inner" style="height: 64vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
+      <strong>小懒笔记</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -147,6 +151,18 @@
               <a class="nav-link" href="/categories" target="_self">
                 
                 <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/write" target="_self">
+                
+                <span>写笔记</span>
               </a>
             </li>
           
@@ -233,6 +249,20 @@
             </div>
           
         
+          
+          
+          
+          
+            <div class="col-4 mobile-grid-cell">
+              <a href="/write" target="_self">
+                <div class="mobile-grid-item">
+                  <i class="iconfont icon-link-fill"></i>
+                  <span>写笔记</span>
+                </div>
+              </a>
+            </div>
+          
+        
         
           <div class="col-4 mobile-grid-cell" id="mobile-search-btn">
             <a href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -263,23 +293,19 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+     style="background: url('/img/study-hero.svg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.16)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="An elegant Material-Design theme for Hexo"></span>
+            <span id="subtitle">小懒的学习笔记</span>
           
         </div>
 
         
       </div>
 
-      
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
       
     </div>
   </div>
@@ -295,7 +321,7 @@
     
       <div class="container nopadding-x-md">
         <div id="board"
-          style="margin-top: 0">
+          >
           
           <div class="container">
             <div class="row">
@@ -310,13 +336,305 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2026/06/04/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" target="_self">
-          NVM 安装与使用教程
+        <a href="/flutter/" target="_self">
+          Flutter 学习笔记
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/04/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/flutter/" target="_self">
+        <div>
+          fluter什么是flutter?由谷歌推出的开源跨平台ui开发框架 采用Dart 语言开发新建fluutter 项目$ flutter create my_first_app环境校验命令flutter doctor运行项目 flutter run热加载:终端打r清空项目缓存 flutter clean安装项目依赖 flutter pub get Dart语法变量声明 var变量名&#x3D;值&
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-07-24 14:52" pubdate>
+              2026-07-24
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Flutter/">#Flutter</a>
+            
+              <a href="/tags/Dart/">#Dart</a>
+            
+              <a href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91/">#移动端开发</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2026/06/29/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" target="_self">
+          CSS 盒子模型
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/29/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" target="_self">
+        <div>
+          CSS 盒子模型所有html元素都可以看作盒子Margin(外边距)-清理边框外的区域,外边距是透明的.Border(边框)-围绕在内边距和内容外的边框Padding(内边距)-清除内容周围的区域,内边距是他们的.Content(内容)-盒子的内容,显示文本和图像
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-06-29 08:54" pubdate>
+              2026-06-29
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">#前端基础</a>
+            
+              <a href="/tags/CSS/">#CSS</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2026/06/05/React/" target="_self">
+          React
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/05/React/" target="_self">
+        <div>
+          一、React是什么? React 是一个用来做「网页界面」的 JavaScript 库（工具），由 Facebook 开发。可以理解成:专门帮我们快速、高效搭建网页 &#x2F; APP 界面的积木工具。react不是框架(Vue,Angular是框架),它是库,更轻,更自由  二、React 解决了什么问题？ 组件化：把页面拆成一个个独立小零件（按钮、卡片、表单），复用、维护超简单 数据驱动页
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-06-05 16:34" pubdate>
+              2026-06-05
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/React/">#React</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2026/06/05/cloudflare/" target="_self">
+          cloudflare
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/05/cloudflare/" target="_self">
+        <div>
+          一、云服务p:服务商把电脑、硬盘、宽带放机房，租给你远程使用 &#x3D; 云服务  云服务器 (ECS)：远程一台虚拟电脑，可以装系统跑网站、程序 对象存储 (S3)：远程超大硬盘，专门存图片、视频、静态文件（后面存储桶就是它） CDN&#x2F;边缘网络：Cloudflare 主打，就近加速用户访问  二、存储桶 &amp; S3 存储 S3 是什么S3 是亚马逊 AWS 定的一套存储接口标准
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-06-05 15:32" pubdate>
+              2026-06-05
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Cloudflare/">#Cloudflare</a>
+            
+              <a href="/tags/CDN/">#CDN</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2026/06/05/JavaScript/" target="_self">
+          JavaScript
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/05/JavaScript/" target="_self">
+        <div>
+          一、JavaScript 是什么？JavaScript（简称 JS） 是一种运行在浏览器 &#x2F; 服务器上的编程语言，是网页的 “动作控制器”。简单理解:  HTML &#x3D; 网页的骨架(文字,图片,按钮长什么样) CSS &#x3D; 网页的皮肤(颜色,布局,样式) JavaScript &#x3D; 网页的大脑和手脚(让网页动起来,能交互) 它是前端开发必学语言，也是全世界最流行、
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-06-05 11:14" pubdate>
+              2026-06-05
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2026/06/05/typescript/" target="_self">
+          TypeScript
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/05/typescript/" target="_self">
+        <div>
+          一、TypeScript 是什么？TS &#x3D; 带类型的 JavaScript浏览器不能直接运行 TS，必须编译成 JS才能跑。简单理解：  JavaScript 是无类型的语言（变量随便改类型，容易出错） TypeScript 给 JS 加上了类型检查，让代码更严谨、更安全官方定义：TypeScript 是微软开发的开源编程语言，最终会编译成普通 JavaScript 运行在浏览器 &#x
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-06-05 11:04" pubdate>
+              2026-06-05
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/JavaScript/">#JavaScript</a>
+            
+              <a href="/tags/TypeScript/">#TypeScript</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2026/06/05/git/" target="_self">
+          Git版本控制
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/05/git/" target="_self">
+        <div>
+          一、什么是 Git？Git 是一个免费、开源、分布式的「版本控制系统」。简单比喻:  你写文档、写代码、做设计，每一次修改都能自动记录 能随时回到过去任何一个版本 多人一起改同一个文件不会乱 所有历史记录都存在本地，不怕丢它不是 GitHub！ Git &#x3D; 工具(装在你电脑里) GitHub &#x3D; 云端仓库(用来放 Git 管理的文件)  二、Git 解决了什么问题？这是 Git
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2026-06-05 10:13" pubdate>
+              2026-06-05
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Git/">#Git</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2026/06/05/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" target="_self">
+          NVM 使用教程
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/05/nvm%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" target="_self">
         <div>
           一、前言：为什么需要 NVM？我们在进行 Node.js 开发、前端项目开发时，经常会遇到一个核心问题：不同项目适配的 Node.js 版本不同。有的老旧项目需要低版本 Node 运行，而 React、Next.js 等新项目需要高版本 Node支持。如果本地仅安装一个 Node 版本，来回卸载重装非常麻烦，还容易导致环境报错、配置崩盘。NVM（Node Version Manager）是 Nod
         </div>
@@ -326,41 +644,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2026-06-04 14:49" pubdate>
-              2026-06-04
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2026/06/04/node-operator/" target="_self">
-          Node.js 变量、作用域与运算符（超详细实战教程）
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/04/node-operator/" target="_self">
-        <div>
-          变量、作用域、运算符是 Node.js 代码的核心骨架，所有业务逻辑、数据处理、接口开发都基于这三大基础实现。很多新手代码报错、变量冲突、逻辑运算错误，本质都是没吃透这部分知识点。本文结合 Node.js 运行特性，从零详解所有用法、区别、踩坑点，搭配可直接运行的实战案例。一、Node.js 变量定义与三种声明方式变量是用于存储数据的容器，Node.js 沿用 JS 三种变量声明关键字：var、l
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2026-06-04 12:30" pubdate>
-              2026-06-04
+            <time datetime="2026-06-05 10:05" pubdate>
+              2026-06-05
             </time>
           </div>
         
@@ -369,7 +654,9 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Node-js-%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80-%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/">#Node.js, 前端基础, 后端开发</a>
+              <a href="/tags/Node-js/">#Node.js</a>
+            
+              <a href="/tags/NVM/">#NVM</a>
             
           </div>
         
@@ -383,15 +670,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2026/06/04/node-base/" target="_self">
-          Node.js 数据类型与流程控制
+        <a href="/2026/06/04/3/" target="_self">
+          Node.js 函数详解（声明方式、参数、返回值、作用域实战）
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/04/node-base/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/04/3/" target="_self">
         <div>
-          Node.js 基于 JavaScript 语法，拥有一套完整的数据类型体系和流程控制语法，是编写后端逻辑、接口开发的基础，本文总结日常开发最常用的核心知识点。一、Node.js 常用数据类型  数字类型（Number）包含整数、小数，对应其他语言的 Integer、Float、Double，统一为 Number 类型。&#x2F;&#x2F; 整数let num1 &#x3D; 0let num
+          函数是Node.js 编程的核心灵魂。  前面学的变量、数据类型、运算符、判断循环、字符串数组，全部都是“原材料”，函数才是用来组装代码、实现功能、封装接口、复用逻辑的核心载体。后端写接口、写工具方法、处理业务逻辑、拆分代码模块，100% 全部依赖函数。本文从零讲透 Node.js 所有函数用法、区别、实战场景、高频踩坑点。 一、什么是函数？（通俗理解）函数就是：把一段重复、完整、特定功能的代码打
         </div>
       </a>
 
@@ -399,7 +686,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2026-06-04 12:10" pubdate>
+            <time datetime="2026-06-04 17:30" pubdate>
               2026-06-04
             </time>
           </div>
@@ -411,6 +698,12 @@
             
               <a href="/tags/Node-js/">#Node.js</a>
             
+              <a href="/tags/%E5%90%8E%E7%AB%AF%E5%9F%BA%E7%A1%80/">#后端基础</a>
+            
+              <a href="/tags/%E5%87%BD%E6%95%B0/">#函数</a>
+            
+              <a href="/tags/%E7%BC%96%E7%A8%8B%E6%A0%B8%E5%BF%83/">#编程核心</a>
+            
           </div>
         
       </div>
@@ -423,15 +716,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2026/06/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%98%BF%E5%98%BF%E5%98%BF/" target="_self">
-          我的第一篇博客网站嘿嘿嘿
+        <a href="/2026/06/04/2/" target="_self">
+          Node.js 字符串与数组常用方法
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/04/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E5%98%BF%E5%98%BF%E5%98%BF/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/04/2/" target="_self">
         <div>
-          
+          Node.js 字符串与数组常用方法  在 Node.js 后端开发中，字符串处理、数组处理是使用率最高的操作。参数接收、数据筛选、接口返回、文件解析、表单校验，全部依赖这两类方法。很多新手写代码卡顿、逻辑繁琐，本质是不会用原生高效方法。  本文承接上文变量、运算符、作用域知识点，汇总工作 100% 常用、无鸡肋的字符串、数组 API，搭配可直接运行的 Node 案例、实战场景、踩坑点，零基础可直
         </div>
       </a>
 
@@ -439,51 +732,37 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2026-06-04 11:22" pubdate>
+            <time datetime="2026-06-04 13:00" pubdate>
               2026-06-04
             </time>
           </div>
         
         
         
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2026/06/04/hello-world/" target="_self">
-          Hello World
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2026/06/04/hello-world/" target="_self">
-        <div>
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2026-06-04 11:14" pubdate>
-              2026-06-04
-            </time>
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Node-js/">#Node.js</a>
+            
+              <a href="/tags/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/">#后端开发</a>
+            
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">#数据处理</a>
+            
+              <a href="/tags/%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">#基础语法</a>
+            
           </div>
         
-        
-        
       </div>
     </article>
   </div>
 
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
 
 
 
@@ -560,21 +839,6 @@
 <script  src="/js/plugins.js" ></script>
 
 
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
 
 
 
@@ -588,6 +852,10 @@
   <script  src="/js/local-search.js" ></script>
 
 
+
+
+  
+<script src="/js/xiaolan-editor.js"></script>
 
 
 
